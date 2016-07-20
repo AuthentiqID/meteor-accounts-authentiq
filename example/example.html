@@ -1,0 +1,23 @@
+<head>
+	<title>Authentiq Example</title>
+</head>
+
+<body>
+  <h1>Welcome to Authentiq example for Meteor!</h1>
+
+  {{> loginButtons}}
+
+  {{#if currentUser}}
+    {{> authentiq }}
+  {{/if}}
+</body>
+
+<template name="authentiq">
+  <h2>Profile info!</h2>
+
+  <ul>
+    {{#each objectToPairs currentUser.services.authentiq}}
+      <li>{{key}}: {{value}}</li>
+    {{/each}}
+  </ul>
+</template>
